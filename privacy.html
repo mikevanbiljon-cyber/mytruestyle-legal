@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Privacy Policy · My True Style</title>
+<meta name="description" content="Privacy Policy for My True Style." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet" />
+<style>:root {
+  --cream: #F6F1EA; --paper: #FBF8F3; --ink: #211C18; --ink-2: #5A5049;
+  --line: #E6DDD1; --aubergine: #5E4B56; --gold: #C9A36B;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--cream); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6; font-size: 17px;
+}
+.wrap { max-width: 720px; margin: 0 auto; padding: 40px 22px 80px; }
+.serif { font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif; }
+header.site { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
+.brand { font-size: 26px; font-weight: 600; letter-spacing: -0.3px; color: var(--ink); text-decoration: none; }
+nav a { color: var(--ink-2); text-decoration: none; font-size: 14px; margin-left: 18px; }
+nav a:hover { color: var(--aubergine); }
+h1 { font-size: 44px; line-height: 1.05; font-weight: 600; letter-spacing: -0.5px; margin: 0 0 6px; text-wrap: balance; }
+.updated { color: var(--ink-2); font-size: 14px; margin: 0 0 28px; }
+.intro { font-size: 19px; color: var(--ink-2); margin: 0 0 8px; }
+section { border-top: 1px solid var(--line); padding-top: 26px; margin-top: 26px; }
+h2 { font-size: 27px; font-weight: 600; letter-spacing: -0.2px; margin: 0 0 10px; }
+p { margin: 0 0 12px; }
+a.mail { color: var(--aubergine); }
+.card {
+  background: var(--paper); border: 1px solid var(--line); border-radius: 22px;
+  padding: 26px; margin-top: 20px;
+}
+.grid { display: grid; gap: 16px; }
+@media (min-width: 560px) { .grid { grid-template-columns: 1fr 1fr; } }
+.tile {
+  display: block; background: var(--paper); border: 1px solid var(--line);
+  border-radius: 22px; padding: 24px; text-decoration: none; color: var(--ink);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.tile:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(33,28,24,.10); }
+.tile h3 { font-size: 22px; font-weight: 600; margin: 0 0 6px; }
+.tile p { color: var(--ink-2); font-size: 15px; margin: 0; }
+footer.site { border-top: 1px solid var(--line); margin-top: 48px; padding-top: 24px; color: var(--ink-2); font-size: 14px; }
+footer.site a { color: var(--ink-2); text-decoration: none; margin-right: 16px; }
+footer.site a:hover { color: var(--aubergine); }</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <a class="brand serif" href="index.html">My True Style</a>
+    <nav><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></nav>
+  </header>
+  <h1 class="serif">Privacy Policy</h1>
+  <p class="updated">Last updated 15 July 2026</p>
+  <p class="intro">My True Style is built to keep your photos and personal details on your own device wherever possible. This policy explains what we collect, what leaves your phone, and the controls you have.</p>
+  <section>
+    <h2 class="serif">The short version</h2>
+    <p>Your photos, wardrobe, style profile, chats and plans are stored on your device — not on our servers.</p>
+    <p>To create a result (your colour reading, an on-you try-on, background removal, tagging a garment) your photos are sent securely to specialist AI services, used to produce that result, and not kept by us afterwards.</p>
+    <p>Usage is measured anonymously so we can see which features help. That measurement never includes your photos, your name, or the words in your chats.</p>
+  </section>
+  <section>
+    <h2 class="serif">What stays on your device</h2>
+    <p>Your selfie and full-length photos, the garment photos you add, your colour season and palette, your saved outfits, wish list, week and trip plans, and your stylist conversations are all stored locally on your phone.</p>
+    <p>You can remove all of it at any time from Me → Reset app, or take a copy with Me → Export my data.</p>
+  </section>
+  <section>
+    <h2 class="serif">What is sent off your device, and to whom</h2>
+    <p>When you use an AI feature, the relevant photo and a short text prompt are sent over an encrypted connection to our processing service, which relays them to the AI providers below. We do not keep your images; the providers process them to return a result and, per their terms, do not use them to train their models.</p>
+    <p>Anthropic (Claude) — analyses your colouring, powers the stylist’s reasoning and chat, and (see below) checks a saved model photo is you.</p>
+    <p>fal.ai — generates the on-you try-on images (using image models including Google’s Gemini image model) and removes photo backgrounds (BiRefNet).</p>
+    <p>Keeping your looks yours — the app is made to try clothes on you, so when you save a full-length try-on model photo we make a one-off check that its face is a reasonable likeness of your profile selfie. This compares two faces (biometric information); it is performed by Anthropic (Claude) via our relay, used only for that check, and neither the images nor any face data are stored. It is deliberately lenient and you can always confirm “it’s me” to keep a photo — it never permanently blocks you, and it isn’t used to identify you for any other purpose.</p>
+    <p>Our own relay is a Supabase Edge Function that holds our API keys and passes requests through; it is the only place secrets live, and it does not store your photos.</p>
+  </section>
+  <section>
+    <h2 class="serif">Your account</h2>
+    <p>You can use most of the app without an account. If you choose to sign in with Apple or Google, we receive basic profile information from them (such as your name and email) to identify your account. During the current beta, sign-in may be simulated for testing and no server-side account is created.</p>
+    <p>We never see your Apple or Google password.</p>
+  </section>
+  <section>
+    <h2 class="serif">Anonymous analytics</h2>
+    <p>We record simple, anonymous events — for example, which feature you opened or whether the first-run steps completed — tied to a random identifier generated on your device. This helps us improve the app.</p>
+    <p>These events never contain your photos, your name, your email, or the text of your messages.</p>
+  </section>
+  <section>
+    <h2 class="serif">Subscriptions</h2>
+    <p>If you subscribe, payment is handled by the Apple App Store (and, where used, RevenueCat). We do not receive or store your card details.</p>
+  </section>
+  <section>
+    <h2 class="serif">Where data is processed</h2>
+    <p>The AI providers above may process your content on servers outside your country, including in the United States. Sending a photo for a result means it is transmitted to, and processed in, those locations for that purpose.</p>
+  </section>
+  <section>
+    <h2 class="serif">Your controls</h2>
+    <p>Export — Me → Export my data gives you a copy of your profile.</p>
+    <p>Delete — Me → Reset app erases your on-device data. To close an account you created, contact us and we will remove any associated account record.</p>
+  </section>
+  <section>
+    <h2 class="serif">Children</h2>
+    <p>My True Style is not directed at children under 13, and we do not knowingly collect their information.</p>
+  </section>
+  <section>
+    <h2 class="serif">Changes</h2>
+    <p>If we change this policy we will update the date above and, for material changes, tell you in the app.</p>
+  </section>
+  <section>
+    <h2 class="serif">Contact</h2>
+    <p>Questions about your privacy? Email us at <a class="mail" href="mailto:support@mytruestyle.app">support@mytruestyle.app</a>.</p>
+  </section>
+  <footer class="site">
+    <div><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></div>
+    <p style="margin-top:12px">© My True Style · <a class="mail" href="mailto:support@mytruestyle.app">support@mytruestyle.app</a></p>
+  </footer>
+</div>
+</body>
+</html>
