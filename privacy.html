@@ -57,49 +57,89 @@ footer.site a:hover { color: var(--aubergine); }</style>
     <nav><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></nav>
   </header>
   <h1 class="serif">Privacy Policy</h1>
-  <p class="updated">Last updated 15 July 2026</p>
-  <p class="intro">My True Style is built to keep your photos and personal details on your own device wherever possible. This policy explains what we collect, what leaves your phone, and the controls you have.</p>
+  <p class="updated">Last updated 1 October 2026</p>
+  <p class="intro">My True Style keeps your photos, wardrobe and style profile on your own phone. Some features need to send a photo, or something you have told the app, to an AI service to make your result. This policy explains what leaves your phone, who receives it, how long it is kept, and the controls you have.</p>
   <section>
     <h2 class="serif">The short version</h2>
-    <p>Your photos, wardrobe, style profile, chats and plans are stored on your device — not on our servers.</p>
-    <p>To create a result (your colour reading, an on-you try-on, background removal, tagging a garment) your photos are sent securely to specialist AI services, used to produce that result, and not kept by us afterwards.</p>
-    <p>Usage is measured anonymously so we can see which features help. That measurement never includes your photos, your name, or the words in your chats.</p>
+    <p>Your photos, wardrobe, colour profile, saved looks, plans, stylist conversations and style memory are stored on your phone. We do not keep a copy of them on our server.</p>
+    <p>When you ask for a result (your colour reading, a try-on, tagging a garment, a stylist reply), the photos and details it needs are sent over an encrypted connection, through our server, to our AI providers: Anthropic (Claude), fal.ai, and Google's Gemini image models, which we reach through fal.ai. The result comes back to your phone.</p>
+    <p>Our server keeps a small amount about your use of the app: usage records tied to a random app ID and the name you use in the app, any feedback you send us, and short-lived security records. Me → Delete account deletes them, apart from a few records we keep with your name removed (see Usage records on our server).</p>
+    <p>We do not show ads, we do not sell your data, and we do not track you across other companies' apps or websites.</p>
   </section>
   <section>
-    <h2 class="serif">What stays on your device</h2>
-    <p>Your selfie and full-length photos, the garment photos you add, your colour season and palette, your saved outfits, wish list, week and trip plans, and your stylist conversations are all stored locally on your phone.</p>
-    <p>You can remove all of it at any time from Me → Reset app, or take a copy with Me → Export my data.</p>
+    <h2 class="serif">What stays on your phone</h2>
+    <p>Your selfies and full-length photos, the garment photos you add, your colour season and palette, your sizes and measurements, your saved outfits, try-on rack, week and trip plans, your cart, your stylist conversations and your style memory are stored on your phone.</p>
+    <p>Me → Reset app erases all of it from your phone. Me → Delete account erases it from your phone and also deletes what our server holds about you (see Your controls). Deleting the app also removes what it stored on your phone.</p>
   </section>
   <section>
-    <h2 class="serif">What is sent off your device, and to whom</h2>
-    <p>When you use an AI feature, the relevant photo and a short text prompt are sent over an encrypted connection to our processing service, which relays them to the AI providers below. We do not keep your images; the providers process them to return a result and, per their terms, do not use them to train their models.</p>
-    <p>Anthropic (Claude) — analyses your colouring, powers the stylist’s reasoning and chat, and (see below) checks a saved model photo is you.</p>
-    <p>fal.ai — generates the on-you try-on images (using image models including Google’s Gemini image model) and removes photo backgrounds (BiRefNet).</p>
-    <p>Keeping your looks yours — the app is made to try clothes on you, so when you save a full-length try-on model photo we make a one-off check that its face is a reasonable likeness of your profile selfie. This compares two faces (biometric information); it is performed by Anthropic (Claude) via our relay, used only for that check, and neither the images nor any face data are stored. It is deliberately lenient and you can always confirm “it’s me” to keep a photo — it never permanently blocks you, and it isn’t used to identify you for any other purpose.</p>
-    <p>Our own relay is a Supabase Edge Function that holds our API keys and passes requests through; it is the only place secrets live, and it does not store your photos.</p>
+    <h2 class="serif">What is sent to our AI providers, and why</h2>
+    <p>Nothing is sent until you use a feature that needs it. Each request travels over an encrypted connection to our own server, which passes it to the provider and returns the result.</p>
+    <p>Anthropic (Claude) reads the selfie you take for your colour reading, the garment photos you add (to name and tag them), and your full-length photo (to check it works for try-ons, read your body shape, and find your face for your picture). It checks a finished try-on before you see it and gives the stylist's verdict on a look. It also powers your stylist: your messages, any photo or link you attach, and the profile the stylist needs to answer (your first name, colour season and palette, height, build, sizes and any measurements you entered, fit and style preferences, the pieces in your wardrobe, try-on rack and cart, and your style memory) are sent with each stylist request. It plans your week and your trips from your wardrobe and the weather. When you ask it to shop, it uses your search words with the style and size details you have given to find products; the web search itself is told only your country.</p>
+    <p>fal.ai runs the image models that create your try-ons from your full-length photo and the garment photos you choose. To keep the result looking like you, a close-up of your face cut from that photo is sent with it. fal.ai also removes photo backgrounds.</p>
+    <p>Google's Gemini image models create most try-on images. We reach them through fal.ai and do not send anything to Google directly.</p>
+    <p>Keeping your looks yours: when you add a full-length photo, we make a one-off check that its face is a reasonable likeness of your profile selfie. This compares two faces. Anthropic (Claude) does it through our server, the answer is used only for that check, and no face data is kept by us. It is deliberately lenient, you can always confirm it's you to keep a photo, and it is never used to identify you for any other purpose.</p>
+    <p>How long providers keep it: we do not store your photos on our server. The providers keep what they receive for a limited time under their own policies. Anthropic deletes what it receives through its API within 30 days and, under its commercial terms, does not use it to train its models. fal.ai keeps request data for up to 30 days by default and holds the images it creates on its own storage under its policy.</p>
   </section>
   <section>
-    <h2 class="serif">Your account</h2>
-    <p>You can use most of the app without an account. If you choose to sign in with Apple or Google, we receive basic profile information from them (such as your name and email) to identify your account. During the current beta, sign-in may be simulated for testing and no server-side account is created.</p>
-    <p>We never see your Apple or Google password.</p>
+    <h2 class="serif">Style memory</h2>
+    <p>When you chat with your stylist, the app remembers style preferences you share, such as colours you avoid or fits you like, so later suggestions suit you.</p>
+    <p>These notes are stored on your phone. A short summary is sent with your stylist messages so the reply can take them into account. Our server does not keep them.</p>
+    <p>You can see, edit or delete everything it remembers in Me → What Miles knows (What Emily knows, if Emily is your stylist), or clear it all with Forget everything.</p>
   </section>
   <section>
-    <h2 class="serif">Anonymous analytics</h2>
-    <p>We record simple, anonymous events — for example, which feature you opened or whether the first-run steps completed — tied to a random identifier generated on your device. This helps us improve the app.</p>
-    <p>These events never contain your photos, your name, your email, or the text of your messages.</p>
+    <h2 class="serif">Weather and your location</h2>
+    <p>If you allow location access, the app reads your approximate location only while you are using it, rounds it on your phone to about 1 km, and sends it through our server to Apple Weather (WeatherKit) for your forecast. Place names are looked up by Apple's geocoder on your phone.</p>
+    <p>For a trip, the place you type is looked up the same way and its approximate position is sent for that place's forecast. We do not store your location on our server. The place name and forecast can be saved on your phone with your plans. If you say no to location, the app plans from the season instead.</p>
   </section>
   <section>
-    <h2 class="serif">Subscriptions</h2>
-    <p>If you subscribe, payment is handled by the Apple App Store (and, where used, RevenueCat). We do not receive or store your card details.</p>
+    <h2 class="serif">Your account and Sign in with Apple</h2>
+    <p>You can use the app without an account: choose Continue without an account and give just the name you want to be called.</p>
+    <p>If you choose Sign in with Apple, Apple gives the app a user identifier for your account and, if you choose to share them, your name and email address (Apple lets you hide your real email). These are kept on your phone to recognise you. We do not create an account for you on our server, and we never see your Apple ID password.</p>
+    <p>When you delete your account, the app asks Apple to revoke its sign-in access. You can also stop using Sign in with Apple for this app at any time in your iPhone's Settings, under your name → Sign in with Apple.</p>
+  </section>
+  <section>
+    <h2 class="serif">Usage records on our server</h2>
+    <p>The app creates a random app ID on your phone. With it, our server (Supabase) records simple events, such as which feature you opened or whether a step finished; a periodic summary with counts (how many pieces, looks and saved items you have), time spent in the app, the app version and your iOS version; and, for each AI request, which feature and model it used and what it cost us.</p>
+    <p>The periodic summary also includes the name you use in the app (if you have not set one, the name or email from your sign-in), so we can tell people's feedback apart. Usage records never contain your photos or the words of your messages.</p>
+    <p>We keep these records until you delete your account. When you do, the events and summaries are deleted, the cost records stay only with your ID removed so they can no longer be linked to you, and the record of your daily try-on allowance stays with your random ID but without any name, so an allowance cannot be reset by deleting.</p>
+  </section>
+  <section>
+    <h2 class="serif">Feedback you send us</h2>
+    <p>Me → Send a fix sends your note, the kind of note, the screen you were on, the app version, your random app ID and, if you attach one, a screenshot. They are stored on our server so we can read and fix things, until you delete your account or we clear them.</p>
+    <p>A screenshot shows whatever was on your screen, so check it before you attach it.</p>
+  </section>
+  <section>
+    <h2 class="serif">Security records</h2>
+    <p>To stop abuse, our server briefly records your IP address with a request count and deletes it after about an hour. Our hosting provider's logs may also record requests, including your IP address, and keep them for a short period.</p>
+  </section>
+  <section>
+    <h2 class="serif">Shopping and affiliate links</h2>
+    <p>When you search the shops, our server sends your search words, with the style and size details the search needs, to the shops' public catalogues. When you share or paste a product link, our server opens that page to fetch the product and its photo. Nothing that identifies you is sent to the shop.</p>
+    <p>When you open a shop's page from the app, the link may pass through Skimlinks, an affiliate service, so the shop knows the visit came from us and we may earn a small commission, at no extra cost to you. We add nothing about you to the link. Skimlinks and the shop see your visit as any website would (for example your IP address and browser cookies) under their own privacy policies. Shop pages you open in the app's browser are the shops' own websites.</p>
+  </section>
+  <section>
+    <h2 class="serif">Subscriptions and purchases</h2>
+    <p>Subscriptions are sold through the Apple App Store. Apple takes the payment, and we never see your card details.</p>
+    <p>We use RevenueCat to confirm your subscription. RevenueCat receives purchase information from Apple (which subscription, when it started, whether it renews) with an anonymous ID, not your name or email, and uses it to tell the app whether Premium is on.</p>
+  </section>
+  <section>
+    <h2 class="serif">App updates</h2>
+    <p>Small improvements to the app are delivered by Expo's update service. To check for an update, your phone contacts Expo's servers, which see basic technical details such as your IP address, app version and iOS version.</p>
+  </section>
+  <section>
+    <h2 class="serif">What we never do</h2>
+    <p>No advertising and no ad networks. No selling or sharing your personal information for marketing. No tracking you across other companies' apps or websites. We do not use your photos to train AI models.</p>
   </section>
   <section>
     <h2 class="serif">Where data is processed</h2>
-    <p>The AI providers above may process your content on servers outside your country, including in the United States. Sending a photo for a result means it is transmitted to, and processed in, those locations for that purpose.</p>
+    <p>Our server provider (Supabase) and our AI providers may process your data on servers outside your country, including in the United States. Sending a photo for a result means it is transmitted to, and processed in, those locations for that purpose.</p>
   </section>
   <section>
     <h2 class="serif">Your controls</h2>
-    <p>Export — Me → Export my data gives you a copy of your profile.</p>
-    <p>Delete — Me → Reset app erases your on-device data. To close an account you created, contact us and we will remove any associated account record.</p>
+    <p>Delete account: Me → Delete account permanently erases everything on your phone (including your photos), deletes your events, summaries and feedback on our server, removes your ID from our cost records, and asks Apple to revoke Sign in with Apple. It cannot be undone.</p>
+    <p>Reset app: Me → Reset app erases everything on your phone but does not delete what our server holds. Use Delete account for that.</p>
+    <p>Location: turn location off for My True Style at any time in your iPhone's Settings.</p>
+    <p>Access and correction: to ask what we hold about you, or to have it corrected or deleted, email us. Include the name you use in the app so we can find your records.</p>
   </section>
   <section>
     <h2 class="serif">Children</h2>
